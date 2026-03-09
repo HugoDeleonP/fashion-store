@@ -153,7 +153,7 @@ function renderingDetail(product){
       <span class="card-category" style="font-size:1rem; margin-bottom:1rem; display:block;">${product.category.name}</span>
       <h1>${product.title}</h1>
       <div class="detail-price">R$ ${product.price}</div>
-      <p class="detail-description">As informações do produto estão sendo carregadas através da API. Por favor, aguarde alguns instantes.</p>
+      <p class="detail-description">${product.description}</p>
       <button class="btn-primary" disabled>Adicionar ao Carrinho</button>
     </div>
     `
@@ -200,11 +200,13 @@ function toggleTheme(){
 
 async function main(){
 
+    const urlDomain = window.location.href;
+
     try {
-        const urlDomain = window.location.href;
 
     if(urlDomain.includes('index.html')){
         manipulationOutstanding(await request3ProductsNewer());
+        console.log(await request3ProductsNewer())
     }
     else if(urlDomain.includes('menu.html')){
         renderingCategories(await requestAllCategories())
