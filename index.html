@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <script>
     const savedTheme = localStorage.getItem('theme') || 'dark';
+    console.warn(savedTheme)
     document.documentElement.setAttribute('data-theme', savedTheme);
   </script>
 </head>
