@@ -204,7 +204,7 @@ async function main(){
 
     try {
 
-    if(urlDomain.includes('index.html')){
+    if(urlDomain.includes('index.html') || urlDomain.endsWith("/")){
         manipulationOutstanding(await request3ProductsNewer());
         console.log(await request3ProductsNewer())
     }
